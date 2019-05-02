@@ -1,0 +1,37 @@
+1.求100万以内的质数
+	思路：如果是质数，则必然不能被2、3、5、7整除（2、3、5、7除外）
+	n=4
+	print(2,3,5,7)
+	for i in range(2,10**6):
+    		if i%2!=0:
+        		if i%3!=0:
+            			if i%5!=0:
+                			if i%7!=0:
+                    				n+=1
+                    				print('%d,'%i)
+	print('prime number has %d'%n)
+
+
+2.几何质数
+	a=float(input("please input initial value:a="))
+	q=float(input("pleadse input rate(大于0):q="))
+	n=int(input("please input:n="))
+	if q==1:
+    		S=a*n
+	else:
+    		S=a*(q**n-1)/(q-1)
+	print("%d 的几何级数是 %f"%(n,S))
+
+3.斐波那契数列
+
+	a=int(input("please input n="))
+	L=list(range(0,a))
+	F=L
+	for i in L:
+    		if i<=1:
+        		F[i]=L[i]
+    		else:
+        		F[i]=L[i-1]+L[i-2]
+    		print(F[i],end=',')
+	print()
+	print("第%d个斐波那契数是%d"%(a,F[a-1]))
